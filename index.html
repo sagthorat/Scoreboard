@@ -61,8 +61,16 @@
             </div>
           </div>
         </div>
-        <button class="btn btn-success" v-on:click="finishGame">Finish Game</button>
-        <h1 v-bind:class="className">The winner is : {{winner.toUpperCase()}}</h1>
+        <button class="btn btn-success" v-on:click="finishGameLowScore">Finish Game (Lowest Score Wins)</button>
+        <h1 v-bind:class="classNameLow">The winner is : {{winner.toUpperCase()}}</h1>
+        <div>
+          <button class="btn btn-warning" v-on:click="finishGameHighScore">Finish Game (Highest Score Wins)</button>
+          <h1 v-bind:class="classNameHigh">The winner is : {{winner.toUpperCase()}}</h1>
+        </div>
+        <div>
+          <button class="btn btn-danger" v-on:click="resetGame">Reset Game</button>
+          
+        </div>
       </div>
 
     </div>
