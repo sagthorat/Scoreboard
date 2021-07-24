@@ -17,8 +17,8 @@ const app = Vue.createApp({
             initName: [],
             names: '',
             id: 3,
-            winningScore:0,
-            winner:'',
+            winningScore: 0,
+            winner: '',
             className: 'hide',
             scoreToAdd: '',
             scoreToAdd1: '',
@@ -26,9 +26,11 @@ const app = Vue.createApp({
         }
     },
     methods: {
-        scoreUp(player,num) {
+        scoreUp(player, num) {
             player.score += Number(num);
-            
+            if (this.initName.length < 2) {
+                alert('Please add atleast 2 players first!!!')
+            }
 
         },
         scoreDown(player) {
@@ -37,10 +39,10 @@ const app = Vue.createApp({
 
             }
         },
-        
+
         addNames(item) {
             this.initName.push(item)
-            
+
             if (this.id > 0) {
                 this.id -= 1
             }
@@ -51,14 +53,12 @@ const app = Vue.createApp({
             console.log(this.winningScore);
             this.className = 'show'
             // winner.style.display = "block";
-            
-            if (this.player1.score == this.winningScore){
+
+            if (this.player1.score == this.winningScore) {
                 this.winner = this.initName[0]
-            }
-            else if (this.player2.score == this.winningScore){
+            } else if (this.player2.score == this.winningScore) {
                 this.winner = this.initName[1]
-            }
-            else {
+            } else {
                 this.winner = this.initName[2]
             }
         }
