@@ -31,9 +31,9 @@
             <div class="m-3">
               <h3>{{getName}}</h3>
               <div class="btn-group" role="group">
-                <button class="btn btn-success" v-on:click="scoreUp(player1)">UP + 1</button>
-                <button class="btn btn-success" v-on:click="scoreUp5(player1)">UP + 5</button>
-                <button class="btn btn-danger" v-on:click="scoreDown(player1)">DOWN</button>
+                <input onfocus="this.value=''" type="text" v-model="scoreToAdd" placeholder="add score">
+                <button v-on:click="scoreUp(player1,scoreToAdd)">Add Score</button>
+                <button class="btn btn-danger" v-on:click="scoreDown(player1)">- 1 </button>
               </div>
               <h4>Score {{player1.score}}</h4>
             </div>
@@ -42,9 +42,9 @@
             <div class="m-3">
               <h3>{{getName1}}</h3>
               <div class="btn-group" role="group">
-                <button class="btn btn-success" v-on:click="scoreUp(player2)">UP + 1</button>
-                <button class="btn btn-success" v-on:click="scoreUp5(player2)">UP + 5</button>
-                <button class="btn btn-danger" v-on:click="scoreDown(player2)">DOWN</button>
+                <input onfocus="this.value=''" type="text" v-model="scoreToAdd" placeholder="add score">
+                <button v-on:click="scoreUp(player2,scoreToAdd)">Add Score</button>
+                <button class="btn btn-danger" v-on:click="scoreDown(player2)">- 1</button>
               </div>
               <h4>Score {{player2.score}}</h4>
             </div>
@@ -53,16 +53,16 @@
             <div class="m-3">
               <h3>{{getName2}}</h3>
               <div class="btn-group" role="group">
-                <button class="btn btn-success" v-on:click="scoreUp(player3)">UP + 1</button>
-                <button class="btn btn-success" v-on:click="scoreUp5(player3)">UP + 5</button>
-                <button class="btn btn-danger" v-on:click="scoreDown(player3)">DOWN</button>
+                <input onfocus="this.value=''" type="text" v-model="scoreToAdd" placeholder="add score">
+                <button v-on:click="scoreUp(player3,scoreToAdd)">Add Score</button>
+                <button class="btn btn-danger" v-on:click="scoreDown(player3)">- 1</button>
               </div>
               <h4>Score {{player3.score}}</h4>
             </div>
           </div>
         </div>
         <button class="btn btn-success" v-on:click="finishGame">Finish Game</button>
-        <h1 v-bind:class="className">The winner is : {{winner}}</h1>
+        <h1 v-bind:class="className">The winner is : {{winner.toUpperCase()}}</h1>
       </div>
 
     </div>

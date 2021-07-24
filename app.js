@@ -19,12 +19,13 @@ const app = Vue.createApp({
             id: 3,
             winningScore:0,
             winner:'',
-            className: 'hide'
+            className: 'hide',
+            scoreToAdd: ''
         }
     },
     methods: {
-        scoreUp(player) {
-            player.score += 1;
+        scoreUp(player,num) {
+            player.score += Number(num);
             
 
         },
@@ -34,10 +35,7 @@ const app = Vue.createApp({
 
             }
         },
-        scoreUp5(player) {
-            player.score += 5;
-
-        },
+        
         addNames(item) {
             this.initName.push(item)
             
