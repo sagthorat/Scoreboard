@@ -33,7 +33,7 @@
               <div class="btn-group" role="group">
                 <input onfocus="this.value=''" type="text" v-model="scoreToAdd" placeholder="add score">
                 <button v-on:click="scoreUp(player1,scoreToAdd)">Add Score</button>
-                <button class="btn btn-danger" v-on:click="scoreDown(player1)">- 1 </button>
+
               </div>
               <h4>Score {{player1.score}}</h4>
             </div>
@@ -42,9 +42,9 @@
             <div class="m-3">
               <h3>{{getName1}}</h3>
               <div class="btn-group" role="group">
-                <input onfocus="this.value=''" type="text" v-model="scoreToAdd" placeholder="add score">
-                <button v-on:click="scoreUp(player2,scoreToAdd)">Add Score</button>
-                <button class="btn btn-danger" v-on:click="scoreDown(player2)">- 1</button>
+                <input onfocus="this.value=''" type="text" v-model="scoreToAdd1" placeholder="add score">
+                <button v-on:click="scoreUp(player2,scoreToAdd1)">Add Score</button>
+
               </div>
               <h4>Score {{player2.score}}</h4>
             </div>
@@ -53,9 +53,9 @@
             <div class="m-3">
               <h3>{{getName2}}</h3>
               <div class="btn-group" role="group">
-                <input onfocus="this.value=''" type="text" v-model="scoreToAdd" placeholder="add score">
-                <button v-on:click="scoreUp(player3,scoreToAdd)">Add Score</button>
-                <button class="btn btn-danger" v-on:click="scoreDown(player3)">- 1</button>
+                <input onfocus="this.value=''" type="text" v-model="scoreToAdd2" placeholder="add score">
+                <button v-on:click="scoreUp(player3,scoreToAdd2)">Add Score</button>
+
               </div>
               <h4>Score {{player3.score}}</h4>
             </div>

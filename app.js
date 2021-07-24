@@ -20,7 +20,9 @@ const app = Vue.createApp({
             winningScore:0,
             winner:'',
             className: 'hide',
-            scoreToAdd: ''
+            scoreToAdd: '',
+            scoreToAdd1: '',
+            scoreToAdd2: ''
         }
     },
     methods: {
