@@ -62,7 +62,7 @@
           </div>
         </div>
         <button class="btn btn-success" v-on:click="finishGame">Finish Game</button>
-        <h1 style="display: none">The winner is {{winner}}</h1>
+        <h1 v-bind:class="className">The winner is : {{winner}}</h1>
       </div>
 
     </div>

@@ -18,13 +18,14 @@ const app = Vue.createApp({
             names: '',
             id: 3,
             winningScore:0,
-            winner:''
+            winner:'',
+            className: 'hide'
         }
     },
     methods: {
         scoreUp(player) {
             player.score += 1;
-            console.log(player.score)
+            
 
         },
         scoreDown(player) {
@@ -39,15 +40,16 @@ const app = Vue.createApp({
         },
         addNames(item) {
             this.initName.push(item)
-            console.log(this.initName)
+            
             if (this.id > 0) {
                 this.id -= 1
             }
         },
         finishGame() {
 
-            this.winningScore = Math.max(this.player1.score, this.player2.score, this.player3.score)
-
+            this.winningScore = Math.min(this.player1.score, this.player2.score, this.player3.score)
+            console.log(this.winningScore);
+            this.className = 'show'
             // winner.style.display = "block";
             
             if (this.player1.score == this.winningScore){
