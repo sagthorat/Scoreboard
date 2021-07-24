@@ -27,10 +27,16 @@ const app = Vue.createApp({
     },
     methods: {
         scoreUp(player, num) {
-            player.score += Number(num);
-            if (this.initName.length < 2) {
-                alert('Please add atleast 2 players first!!!')
+            const regex = /[1-9]/;
+            if (regex.test(num)) {
+                player.score += Number(num);
+                if (this.initName.length < 2) {
+                    alert('Please add atleast 2 players first!!!')
+                }
+            } else {
+                alert('only numbers are allowed in score')
             }
+
 
         },
         scoreDown(player) {
@@ -41,7 +47,13 @@ const app = Vue.createApp({
         },
 
         addNames(item) {
-            this.initName.push(item)
+            const regex = /[a-zA-Z]/;
+            if (regex.test(item)) {
+                this.initName.push(item)
+            } else {
+                alert("Please enter valid name, no numbers or special characters!!!");
+            }
+
 
             if (this.id > 0) {
                 this.id -= 1
