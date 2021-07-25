@@ -1,4 +1,4 @@
-* {
+/* * {
   box-sizing: border-box;
 }
 
@@ -88,7 +88,7 @@ button:active:disabled {
   border: 1px solid #9c9c9c;
   background-color: rgb(158, 158, 158);
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
-}
+} */
 
 .hide {
   display: none;
